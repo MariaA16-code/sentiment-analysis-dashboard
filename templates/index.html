@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sentiment Analysis Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <div class="container">
+
+    <header>
+      <h1>😊 Sentiment Analysis</h1>
+      <p>Analyze the emotional tone of any text</p>
+    </header>
+
+    <!-- SINGLE TEXT ANALYSIS -->
+    <div class="card">
+      <h2>Analyze Text</h2>
+      <textarea id="inputText" rows="5" placeholder="Type or paste any text here..."></textarea>
+      <button onclick="analyzeSingle()">Analyze</button>
+    </div>
+
+    <!-- RESULT -->
+    <div class="card result-card" id="resultCard" style="display:none">
+      <h2>Result</h2>
+      <div class="sentiment-badge" id="sentimentBadge"></div>
+      <div class="scores-grid">
+        <div class="score-item">
+          <span>Compound Score</span>
+          <strong id="compound">0</strong>
+        </div>
+        <div class="score-item">
+          <span>Polarity</span>
+          <strong id="polarity">0</strong>
+        </div>
+        <div class="score-item">
+          <span>Subjectivity</span>
+          <strong id="subjectivity">0</strong>
+        </div>
+      </div>
+      <div class="bar-section">
+        <div class="bar-row">
+          <span>Positive</span>
+          <div class="bar-track">
+            <div class="bar positive" id="posBar"></div>
+          </div>
+          <span id="posVal">0%</span>
+        </div>
+        <div class="bar-row">
+          <span>Neutral</span>
+          <div class="bar-track">
+            <div class="bar neutral" id="neuBar"></div>
+          </div>
+          <span id="neuVal">0%</span>
+        </div>
+        <div class="bar-row">
+          <span>Negative</span>
+          <div class="bar-track">
+            <div class="bar negative" id="negBar"></div>
+          </div>
+          <span id="negVal">0%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- MULTIPLE TEXTS -->
+    <div class="card">
+      <h2>Analyze Multiple Texts</h2>
+      <p class="hint">Enter one sentence per line</p>
+      <textarea id="multiText" rows="6" placeholder="I love this!&#10;This is terrible.&#10;The weather is okay."></textarea>
+      <button onclick="analyzeMultiple()">Analyze All</button>
+    </div>
+
+    <!-- MULTIPLE RESULTS -->
+    <div class="card" id="multiResultCard" style="display:none">
+      <h2>Multiple Results</h2>
+      <div id="multiResults"></div>
+    </div>
+
+  </div>
+
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
