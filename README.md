@@ -1,23 +1,23 @@
-# Sentiment Analysis Dashboard 😊
+# Sentiment Analysis Dashboard
 
-Analyze the emotional tone of any text using TextBlob and VADER.
-
-## Features
-- Analyze single text
-- Analyze multiple texts at once
-- Shows positive, negative, neutral scores
-- Visual progress bars
+## Overview
+Built this to learn how NLP libraries work by applying sentiment detection 
+to real text input.
 
 ## Tech Stack
-- Backend: Flask, Python
-- Libraries: TextBlob, VADER
-- Frontend: HTML, CSS, JavaScript
+- Python, Flask
+- TextBlob
+- HTML, CSS, JavaScript
 
-## Setup & Run
+## Features
+- Real-time sentiment detection
+- Simple and clean UI
+
+## Run Locally
+```bash
 pip install -r requirements.txt
-python -m textblob.download_corpora
 python app.py
+```
 
-## Author
-Marria Amir — Information Engineering Technology
-University of Lahore
+## Live Demo
+View on Render (https://sentiment-analysis-dashboard-tyfw.onrender.com)
